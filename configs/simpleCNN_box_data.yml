@@ -1,0 +1,36 @@
+system:
+    CUDA_VISIBLE_DEVICES: '0'
+    GPU_memory_fraction: 0.5
+    num_cpu: 10
+    random_seed: 13
+
+log:
+    log_interval: 10
+    checkpoint_dir: '../log/'
+    model_dir: '../models/'
+    result_dir: '../result/'
+
+model:  
+    name: 'simple_cnn_sigmoid'
+
+optimizer:
+    lr: +1e-3 # default: +1e-3
+
+train:
+    epochs: 10
+    batch_size: 2560
+
+validation:
+    batch_size: 512
+
+dataset:
+    dir: ''
+    csv: ''
+    input_dim: [50, 50, 1]  # HWC
+    stride: 25
+    NTUH_split: [40, 5, 5]
+    MSD_split: [40, 5, 5]
+    PancreasCT_split: [40, 5, 5]
+    seed: 1
+    load: 'box'
+
